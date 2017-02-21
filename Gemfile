@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
+gem 'omniauth-twitter'
 
 group :development, :test do
   # Use sqlite as the database for Active Record
