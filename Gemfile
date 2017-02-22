@@ -27,8 +27,6 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Authentication
 gem 'devise'
@@ -36,6 +34,9 @@ gem 'omniauth-twitter'
 
 # Static Pages
 gem 'high_voltage', '~> 3.0.0'
+
+# Appearances
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 group :development, :test do
   # Use sqlite as the database for Active Record

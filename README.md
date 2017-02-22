@@ -11,7 +11,7 @@ Install Docker and Docker Compose. On MacOS, use [Docker for Mac](https://docs.d
 ### Running the app
 * Copy `.env.web.sample` to `.env.web`
 * Edit `.env.web` to add your settings. Ask if unsure of what to put in here.
-* `docker-compose build` to download and build the images. This will take a couple minutes and downloads ~600MB, but you should only have to do it once.
+* `docker-compose build` to download and build the images. This will take a couple minutes and downloads ~600MB, but you should only have to do it once. Re-build is necessary when new gems are installed, but that will only need to download the new gems.
 * `docker-compose run web rake db:create` to create the database (one-time)
 * `docker-compose run web rake db:migrate` to migrate the database (re-do whenever there are new db migrations)
 * `docker-compose up` in the same directory as docker-compose.yml to run the server (ctrl-c to stop. run command again to restart the server)
