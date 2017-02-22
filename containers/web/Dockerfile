@@ -4,14 +4,16 @@ RUN http_proxy=$HTTP_PROXY apt-get update -qq \
     && http_proxy=$HTTP_PROXY apt-get install -y --no-install-recommends \
         build-essential \
         libpq-dev \
-        nodejs \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && mkdir /myapp
 
-WORKDIR /usr/src/app
+WORKDIR /tmp
 COPY Gemfile* ./
 RUN bundle install
-COPY . .
+
+ADD . /myapp
+WORKDIR /myapp
 
 EXPOSE 3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
