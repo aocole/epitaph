@@ -6,7 +6,7 @@ This is the software behind the soon.rip website. See the [github wiki](https://
 You can run this app for development purposes in Docker Compose.
 
 ### Prerequisites
-Install Docker and Docker Compose. On MacOS, use [Docker for Mac](https://docs.docker.com/docker-for-mac/install/) and install docker-compose with Brew.
+Install Docker and Docker Compose. On MacOS, use [Docker for Mac](https://docs.docker.com/docker-for-mac/install/).
 
 ### Running the app
 * Copy `.env.web.sample` to `.env.web`
