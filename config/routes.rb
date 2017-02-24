@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :epitaphs do
+    post 'write', on: :new
+    get 'write', on: :new
+  end
   get 'home/index'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  write_yours_submit: Write your epitaph
+  twitter_submit: Login with Twitter
+  save_yours_login_required: "to save your epitaph, chose how you want to log in:"
+  epitaph_placeholder: your epitaph...
+  save: Save
