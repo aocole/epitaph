@@ -48,8 +48,6 @@ class EpitaphsController < ApplicationController
     # case we would normally expect
     if session[:epitaph] && session[:epitaph].respond_to?(:[])
       e = session.delete(:epitaph).with_indifferent_access
-      logger.debug "Found epitaph in session: #{e.inspect}"
-      byebug
       @epitaph = Epitaph.find_or_initialize_by(user: current_user)
       @epitaph.name = e[:name]
       @epitaph.text = e[:text]
