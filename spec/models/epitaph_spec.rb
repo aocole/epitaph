@@ -5,7 +5,5 @@ RSpec.describe Epitaph, type: :model do
     e = build :epitaph
     expect{e.save!}.not_to raise_error
     expect(e.slug).not_to be_nil
-    puts e.slug
-
   end
 end
