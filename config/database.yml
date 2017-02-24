@@ -23,7 +23,7 @@ development:
 test:
   <<: *default
   adapter: sqlite3
-  database: db/test.sqlite3
+  database: "<%= ENV['TRAVIS'] ? ':memory:' : 'db/test.sqlite3' %>"
 
 production:
   <<: *default
