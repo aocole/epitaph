@@ -23,6 +23,7 @@ development:
 <% if ENV['TRAVIS'] %>
 test:
   <<: *default
+  host: localhost
   database: travis_ci_test
 <% else %>
 test:
