@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '~> 2.4.0'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -43,6 +44,10 @@ group :development, :test do
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'pry-rails'
 end
 
 group :development do

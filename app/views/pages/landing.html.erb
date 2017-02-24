@@ -1,0 +1,8 @@
+<h1>What will be on your tombstone?</h1>
+
+
+<%= form_for Epitaph.new, url: write_new_epitaph_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, value: session[:name] %>
+  <%= submit_tag t('write_yours_submit') %>
+<% end %>

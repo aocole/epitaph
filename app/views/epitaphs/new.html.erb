@@ -1,0 +1,15 @@
+<%= form_for @epitaph do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :text %>
+  <%= f.text_field :text, value: @epitaph.text || t(:epitaph_placeholder) %>
+
+  <% if current_user %>
+    <%= submit_tag t(:save) %>
+  <% else %>
+    <%= t :save_yours_login_required %>
+    <%= submit_tag t(:twitter_submit) %>
+  <% end %>
+
+<% end %>

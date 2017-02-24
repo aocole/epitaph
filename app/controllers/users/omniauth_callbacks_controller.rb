@@ -9,7 +9,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
       set_flash_message(:notice, :success, :kind => "Twitter") if is_navigational_format?
     else
-      redirect_to new_user_registration_url
+      set_flash_message(:error, :failure, :kind => "Twitter") if is_navigational_format?
+      failure
     end
   end
 

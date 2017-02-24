@@ -1,0 +1,11 @@
+<div><%= @epitaph.name %></div>
+
+<div><%= @epitaph.text %></div>
+
+
+<% if @epitaph.user == current_user %>
+  <div><%=label_tag :share, t(:share) %><%= text_field_tag :share, share_epitaph_url(current_user) %></div>
+<% else %>
+  <div><%= link_to t(:write_yours_from_share), root_path %>
+<% end %>
+
