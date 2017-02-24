@@ -1,4 +1,4 @@
-# Soon R.I.P.
+# Soon R.I.P. [![Build Status](https://travis-ci.org/aocole/epitaph.svg?branch=master)](https://travis-ci.org/aocole/epitaph)
 
 This is the software behind the soon.rip website. See the [github wiki](https://github.com/aocole/epitaph/wiki) for background information.
 
