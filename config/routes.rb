@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :epitaphs do
     post 'write', on: :new
-    get 'write', on: :new
+    get 'share', on: :member
   end
   get 'home/index'
 
