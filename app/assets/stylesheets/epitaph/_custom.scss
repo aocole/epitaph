@@ -1,0 +1,39 @@
+
+$red:    #ff2525;
+$darkred: #720206;
+$darkestblue: #1a1a25;
+$darkerblue: #29293b;
+$darkblue: #34465e;
+$blue: #7191bb;
+
+$brand-primary:             $red;
+$brand-success:             $green;
+$brand-info:                $teal;
+$brand-warning:             $orange;
+$brand-danger:              $red;
+$brand-inverse:             $white;
+
+$body-bg:       $darkblue;
+$body-color:    $white;
+$inverse-bg:    $white;
+$inverse-color: $darkblue;
+
+$link-hover-color:      darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+$font-family-serif:      'Roboto Slab', Georgia, "Times New Roman", Times, serif;
+$headings-font-family: $font-family-serif;
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  letter-spacing: 0.3rem;
+}
+
+nav {
+    background-color: $darkestblue;
+    color: $red;
+    h1.navbar-brand {
+    font-size: 1.8rem;
+}
+}
+
