@@ -1,8 +1,15 @@
-<h2 class='text-primary'><%= t :landing_header %> </h2>
-
-
-<%= form_for Epitaph.new, url: write_new_epitaph_path do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, value: session[:name] %>
-  <%= submit_tag t('write_yours_submit') %>
-<% end %>
+<div class="landing-header">
+    <h2 class='text-primary'><%= t :landing_header %> </h2>
+</div>
+<div class="row justify-content-center">
+  <div class="col-6">
+    <%=t 'landing-content-html'%>
+  </div>
+  <div class="col-6">
+    <%= form_for Epitaph.new, url: write_new_epitaph_path do |f| %>
+      <%= f.label :name %>
+    <%= f.text_field :name, value: session[:name] %>
+    <%= submit_tag t('write_yours_submit') %>
+  <% end %>
+  </div>
+</div>

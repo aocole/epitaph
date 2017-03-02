@@ -10,3 +10,13 @@ en:
   save: Save
   share: Share
   landing_header: What will be written on your grave?
+  landing-content-html:
+    <span class="h3">What is an epitaph?</span>
+    <p>An epitaph refers to text that is inscribed on a tombstone. Many of the
+    best epitaphs are very short, such as one or two lines. While there is no
+    specific format for the
+    information that must be included, keeping the epitaph short
+    challenges the writer to sum up your life.</p>
+    <p>Tailor the emotion of the epitaph to what you want to be remembered
+    by. Epitaphs may be humorous, ironic, or heartfelt. Whatever its
+    emotional mode, it’ll be your last words.</p>
