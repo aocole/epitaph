@@ -1,2 +1,42 @@
 @import "bootstrap_custom";
+body {
+    background-image: image-url('Dot_Gradient_Blue_Top.png');
+    background-position: 0 -170px;
+    background-repeat: repeat-x;
+}
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    letter-spacing: 0.3rem;
+}
+
+nav {
+    background-color: $darkestblue;
+    color: $red;
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
+    font-family: $headings-font-family;
+    img {
+        vertical-align: text-bottom;
+    }
+    span.navbar-brand {
+        padding: 0;
+    }
+    margin-bottom: 3rem;
+}
+
+.landing-header {
+    text-align: center;
+    h4 {
+        margin-bottom: 3rem;
+    }
+}
+
+.tombstone-1 {
+    background-image: url(image_path('Tombstone_1'));
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    font-size: 1.4rem;
+    color: $black;
+}

@@ -24,26 +24,3 @@ $link-hover-decoration: underline;
 $font-family-serif:      'Roboto Slab', Georgia, "Times New Roman", Times, serif;
 $headings-font-family: $font-family-serif;
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    letter-spacing: 0.3rem;
-}
-
-nav {
-    background-color: $darkestblue;
-    color: $red;
-    h1.navbar-brand {
-        font-size: 1.8rem;
-        letter-spacing: 0.4rem;
-    }
-}
-
-.landing-header {
-    text-align: center;
-
-}
-body {
-    background-image: image-url('Dot_Gradient_Blue_Top.png');
-    background-position: 0 -170px;
-    background-repeat: repeat-x;
-}
