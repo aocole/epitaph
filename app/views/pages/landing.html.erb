@@ -1,24 +1,28 @@
 <div class="landing-header">
     <h4 class='text-primary'><%= t :landing_header %> </h4>
-    <div class='tombstone-1'>
-      <h4>Here lies</h4>
-      <h3>Will</h3>
-      <h3>Rogers</h3>
-      <h4>I never met a
-      man I didn’t
-      like.</h4>
-  </div>
+</div>
+<div class='row justify-content-center'>
+    <div class='tombstone-1 col-4-lg'>
+        <div class="epitaph-container">
+            <h5>Here lies</h4>
+            <h3>Will</h3>
+            <h3>Rogers</h3>
+            <h4>I never met a
+                man I didn’t
+                like.</h4>
+        </div>
+    </div>
 </div>
 
 <div class="row justify-content-center">
-  <div class="col-6">
-    <%=t 'landing-content-html'%>
-  </div>
-  <div class="col-6">
-    <%= form_for Epitaph.new, url: write_new_epitaph_path do |f| %>
-      <%= f.label :name %>
-    <%= f.text_field :name, value: session[:name] %>
-    <%= submit_tag t('write_yours_submit') %>
-  <% end %>
-  </div>
+    <div class="col-6">
+        <%=t 'landing-content-html'%>
+    </div>
+    <div class="col-6">
+        <%= form_for Epitaph.new, url: write_new_epitaph_path do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name, value: session[:name] %>
+            <%= submit_tag t('write_yours_submit') %>
+        <% end %>
+    </div>
 </div>

@@ -33,10 +33,22 @@ nav {
 }
 
 .tombstone-1 {
+    text-align: center;
     background-image: url(image_path('Tombstone_1'));
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
-    font-size: 1.4rem;
+    background-position: top center;
     color: $black;
+    width: 50vw;
+    height: 50vh;
+    margin: 0;
+    max-height: 50vh;
+    .epitaph-container {
+        width: 18vw;
+        margin: auto;
+        margin-top: 9vh;
+        h3, h4, h5 {
+            font-size: 2.5vw;
+        }
+    }
 }
