@@ -35,6 +35,7 @@
                 <div class="tombstone tombstone-1 col-4-lg">
                     <div class="epitaph-container">
                         <h3><%= @epitaph.name %></h3>
+                        <%= f.hidden_field :name, value: @epitaph.name %>
                         <%= f.label :text, class: 'sr-only' %>
                         <%= f.text_area :text, value: @epitaph.text, class: 'form-control', placeholder: t(:epitaph_placeholder) %>
                     </div>
