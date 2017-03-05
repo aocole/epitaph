@@ -9,3 +9,58 @@
   <div><%= link_to t(:write_yours_from_share), root_path %>
 <% end %>
 
+<div id="threedeeplayland">
+    <div oncontextmenu="return false;" id="viewerContext" style="width: 400px; height: 400px"></div>
+
+    <%# divs required by openjscad %>
+    <div id="errordiv" style="background: #fff; color: #000; margin 10px;">hello</div>
+    <div id="parametersdiv" style="display: none;"></div>
+    <div id="statusdiv"></div>
+
+    <script type="text/javascript">
+    var gProcessor = null; // required by OpenJScad.org
+
+    function loadProcessor() {
+        gProcessor = new OpenJsCad.Processor(document.getElementById("viewerContext"),
+            { useAsync: false,
+              libraries:["<%= javascript_path 'threedee' %>"],
+
+              viewer: {
+                       plate: { draw: false },
+                       camera: {position: {x:   0,y:  0,z:  200},
+                                clip:     {min: 0.5,  max: 1000}
+                               },
+                       axis: {draw: false},
+                   },
+             directParameters: {
+                 lastName: '',
+                 firstName: '<%= j(@epitaph.name) %>',
+                 dateSpan: '',
+                 epitaph: '<%= j(@epitaph.text) %>'}
+            });
+        loadJSCAD();
+    }
+
+
+    function loadJSCAD() {
+        // var filepath = "/assets/threedee/tombstone.jscad";
+        var filepath = "<%= asset_path("threedee/tombstone.jscad") %>";
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", filepath, true);
+        gProcessor.setStatus("");
+
+        xhr.onload = function() {
+            var source = this.responseText;
+            if (filepath.match(/\.jscad$/i) || filepath.match(/\.js$/i)) {
+                gProcessor.setStatus("");
+                gProcessor.setJsCad(source, filepath);
+            }
+        }
+        xhr.send();
+    }
+
+    $(document).ready(loadProcessor());
+</script>
+
+
+</div>

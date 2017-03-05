@@ -26,4 +26,3 @@
 // require bootstrap/popover
 
 //= require turbolinks
-//= require_tree .
