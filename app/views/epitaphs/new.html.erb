@@ -1,63 +1,60 @@
-<div class="new-epitaph">
-    <div class="fade-down-lighter">
+<div class="fade-down-lighter">
+    <div class="container">
         <div class="row justify-content-center new-epitaph-name">
             <h5><%= @epitaph.name %></h5>
         </div>
         <div class="row justify-content-center new-epitaph-lede">
             <h3><%= t 'new-epitaph-lede-html' %></h3>
         </div>
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q1'} %>
     </div>
-    <div class="lighter">
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q2'} %>
-        <%= render partial: 'new_answer_left', locals: {answer_id: 'new-epitaph-a2-1', name: @epitaph.name} %>
-        <%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a2-2', name: @epitaph.name} %>
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q3'} %>
-        <%= render partial: 'new_answer_left', locals: {answer_id: 'new-epitaph-a3', name: @epitaph.name} %>
-    </div>
-    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q4'} %>
-    <%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a4-1', name: @epitaph.name} %>
-    <%= render partial: 'new_answer_left', locals: {answer_id: 'new-epitaph-a4-2', name: @epitaph.name} %>
-    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q5'} %>
-    <div class="fade-darkest">
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q6'} %>
-    </div>
-    <div class="darkest">
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-ellipses'} %>
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q7'} %>
-        <%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a7', name: @epitaph.name} %>
-        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q8'} %>
-    </div>
-    <%= form_for @epitaph, html: {class: 'themed-form tombstone-bg'} do |f| %>
-        <div class="fade-down-lighter fade-down-lighter-full lighter">
-            <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-end'} %>
-            <div class="row justify-content-center">
-                <div class="tombstone tombstone-1 col-4-lg">
-                    <div class="epitaph-container">
-                        <h3><%= @epitaph.name %></h3>
-                        <%= f.hidden_field :name, value: @epitaph.name %>
-                        <%= f.label :text, class: 'sr-only' %>
-                        <%= f.text_area :text, value: @epitaph.text, class: 'form-control', placeholder: t(:epitaph_placeholder) %>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="new-epitaph-save container">
-            <div class="row justify-content-center">
-                <% if current_user %>
-                    <h6><%= t :save_yours %></h6>
-                <% else %>
-                    <h6><%= t :save_yours_login_required %></h6>
-                <% end %>
-            </div>
-            <div class="row justify-content-center">
-                <% if current_user %>
-                    <%= button_tag t(:save), class: 'btn' %>
-                <% else %>
-                    <%= button_tag t('twitter-submit-html'), class: 'btn', name: 'commit', value: 'twitter' %>
-                <% end %>
-            </div>
-        </div>
-    <% end %>
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q1'} %>
 </div>
+<div class="lighter">
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q2'} %>
+    <%= render partial: 'new_answer_left', locals: {answer_id: 'new-epitaph-a2-1', name: @epitaph.name} %>
+    <%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a2-2', name: @epitaph.name} %>
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q3'} %>
+    <%= render partial: 'new_answer_left', locals: {answer_id: 'new-epitaph-a3', name: @epitaph.name} %>
+</div>
+<%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q4'} %>
+<%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a4-1', name: @epitaph.name} %>
+<%= render partial: 'new_answer_left', locals: {answer_id: 'new-epitaph-a4-2', name: @epitaph.name} %>
+<%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q5'} %>
+<div class="fade-darkest">
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q6'} %>
+</div>
+<div class="darkest">
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-ellipses'} %>
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q7'} %>
+    <%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a7', name: @epitaph.name} %>
+    <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q8'} %>
+</div>
+<%= form_for @epitaph, html: {class: 'themed-form tombstone-bg'} do |f| %>
+    <div class="fade-down-lighter fade-down-lighter-full lighter">
+        <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-end'} %>
+        <%= render 'epitaphs/tombstone' do %>
+            <h5>Here lies</h4>
+            <h3><%= @epitaph.name %></h3>
+            <%= f.hidden_field :name, value: @epitaph.name %>
+            <%= f.label :text, class: 'sr-only' %>
+            <%= f.text_area :text, value: @epitaph.text, class: 'form-control', placeholder: t(:epitaph_placeholder) %>
+        <% end %>
+    </div>
+
+    <div class="new-epitaph-save container">
+        <div class="row justify-content-center">
+            <% if current_user %>
+                <h6><%= t :save_yours %></h6>
+            <% else %>
+                <h6><%= t :save_yours_login_required %></h6>
+            <% end %>
+        </div>
+        <div class="row justify-content-center">
+            <% if current_user %>
+                <%= button_tag t(:save), class: 'btn' %>
+            <% else %>
+                <%= button_tag t('twitter-submit-html'), class: 'btn', name: 'commit', value: 'twitter' %>
+            <% end %>
+        </div>
+    </div>
+<% end %>
