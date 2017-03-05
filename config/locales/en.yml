@@ -20,3 +20,36 @@ en:
     <p>Tailor the emotion of the epitaph to what you want to be remembered
     by. Epitaphs may be humorous, ironic, or heartfelt. Whatever its
     emotional mode, it’ll be your last words.</p>
+  new-epitaph-lede-html:
+    <span class="text-primary">Death</span> is coming soon
+  new-epitaph-q1-html:
+    <div>What will your epitaph say?</div>
+
+    <div>Will it be true?</div>
+  new-epitaph-q2-html: Were you good at something?
+  new-epitaph-a2-1-html: "%{name} achieved so much in life and was so inspirational."
+  new-epitaph-a2-2-html: "%{name} was such a great person."
+  new-epitaph-q3-html: What were some of your accomplishments?
+  new-epitaph-a3-html: "%{name}, you were loved."
+  new-epitaph-q4-html: What will your family think of you now you're gone?
+  new-epitaph-a4-1-html: We'll miss you.
+  new-epitaph-a4-2-html: "%{name}, you were the best kind of friend."
+  new-epitaph-q5-html: Who will you be leaving behind?
+  new-epitaph-q6-html: Will they miss you?
+  new-epitaph-ellipses-html:
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+    <div>.</div>
+  new-epitaph-q7-html: <div>Will you be <span class="text-primary">forgotten</span>?</div>
+  new-epitaph-a7-html: "%{name} who?"
+  new-epitaph-q8-html:
+      What will be written on your grave?
+  new-epitaph-end-html:
+      Write an epitaph that you can be proud of.
+
+
+

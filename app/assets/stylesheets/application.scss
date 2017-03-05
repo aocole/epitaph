@@ -1,8 +1,5 @@
 @import "bootstrap_custom";
 body {
-    background-image: image-url('Dot_Gradient_Blue_Top.png');
-    background-position: 0 -170px;
-    background-repeat: repeat-x;
 }
 
 h1, h2, h3, h4, h5, h6,
@@ -22,10 +19,9 @@ nav {
     span.navbar-brand {
         padding: 0;
     }
-    margin-bottom: 3rem;
 }
-
 .landing-header {
+    padding-top: 3rem;
     h4 {
         margin-bottom: 3rem;
     }
@@ -44,26 +40,54 @@ nav {
     .epitaph-container {
         width: 18vw;
         margin: auto;
-        margin-top: 9vh;
+        margin-top: 10vh;
         h3 {
             font-size: 3.3vw;
         }
         h4, h5 {
-            font-size: 2.5vw;
+            font-size: 2.2vw;
+        }
+        h3, h4, h5 {
+            letter-spacing: 0;
         }
     }
 }
-.tombstone-1 { background-image: url(image_path('Tombstone_1')); }
-.tombstone-2 { background-image: url(image_path('Tombstone_2')); }
+.tombstone-1 { background-image: image-url('Tombstone_1'); }
+.tombstone-2 { background-image: image-url('Tombstone_2'); }
 
 .fade-darker {
-    background-image: url(image_path('Dot_Gradient_Blue'));
+    background-image: image-url('Dot_Gradient_Blue');
     background-position: bottom;
     background-repeat: repeat-x;
 }
 
-.darker {
-    background-color: $darkerblue;
+.fade-darkest {
+    background-image: image-url('Dot_Gradient_Darkblue');
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.fade-down-lighter {
+    background-image: image-url('Dot_Gradient_Darkblue_Top.png');
+    background-position: 0 -270px;
+    background-repeat: repeat-x;
+    &.fade-down-lighter-full {
+    background-position: top;
+    }
+}
+
+.fade-down-lightest {
+    background-image: image-url('Dot_Gradient_Blue_Top.png');
+    background-position: 0 -270px;
+    background-repeat: repeat-x;
+}
+
+.lighter {
+    background-color: $darkblue;
+}
+
+.darkest {
+    background-color: $darkestblue;
 }
 
 form.themed-form {
@@ -95,4 +119,70 @@ form.themed-form {
         padding: 1rem 3rem;
         letter-spacing: 0.1rem;
     }
+}
+
+.new-epitaph-question {
+    font-family: $font-family-serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 5rem;
+    div {
+        margin-bottom: 1rem
+    }
+}
+
+.new-epitaph-answer {
+    q::before, q::after {
+        content: none;
+    }
+    color: $darkestblue;
+    padding: 3rem 2rem 6rem 2rem;
+    margin-bottom: 1rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    &.new-epitaph-answer-left {
+        background-image: image-url('WordBubble_Left');
+    }
+    &.new-epitaph-answer-right {
+        text-align: right;
+        background-image: image-url('WordBubble_Right');
+    }
+}
+
+.new-epitaph-name {
+   padding-top: 7rem;
+   margin-bottom: 5rem;
+}
+
+.new-epitaph-lede {
+    margin-bottom: 10rem;
+}
+
+.new-epitaph-q2 {
+    padding-top: 7rem;
+}
+
+.new-epitaph-a3 {
+    margin-bottom: 5rem;
+}
+
+.new-epitaph-q4 {
+    padding-top: 10rem;
+}
+
+.new-epitaph-q6 {
+    padding: 10rem 0;
+}
+
+.new-epitaph-a7 {
+    margin-bottom: 15rem;
+}
+
+.new-epitaph-q8 .new-epitaph-question {
+    margin-bottom: 2rem;
+}
+
+.new-epitaph-end {
+    padding-top: 2rem;
+    margin-bottom: 5rem;
 }

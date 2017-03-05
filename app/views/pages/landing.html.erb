@@ -1,31 +1,30 @@
-<div class="row landing-header justify-content-center">
-    <h4 class='text-primary'><%= t :landing_header %> </h4>
-</div>
-<div class="row justify-content-center fade-darker">
-    <div class="tombstone tombstone-1 col-4-lg">
-        <div class="epitaph-container">
-            <h5>Here lies</h4>
-            <h3>Will Rogers</h3>
-            <h4>I never met a man I didn’t like</h4>
+<div class="lighter fade-down-lightest">
+    <div class="row landing-header justify-content-center">
+        <h4 class='text-primary'><%= t :landing_header %> </h4>
+    </div>
+    <div class="row justify-content-center fade-darker">
+        <div class="tombstone tombstone-1 col-4-lg">
+            <div class="epitaph-container">
+                <h5>Here lies</h4>
+                <h3>Will Rogers</h3>
+                <h4>I never met a man I didn’t like</h4>
+            </div>
         </div>
     </div>
 </div>
-
-<div class="darker">
-    <div class="container">
-        <div class="row justify-content-center pt-3">
-            <div class="col-6">
-                <%=t 'landing-content-html'%>
-            </div>
-            <div class="col-6">
-                <%= form_for Epitaph.new, url: write_new_epitaph_path, html: {class: 'themed-form'} do |f| %>
-                    <div class="form-group row">
-                        <%= f.label :name, class: 'col-2 col-form-label col-form-label-lg'%>
-                        <%= f.text_field :name, value: session[:name], class: 'form-control form-control-lg col-8', placeholder: Epitaph.human_attribute_name(:name) %>
-                    </div>
-                    <%= button_tag t('write_yours_submit'), class: 'btn btn-large' %>
-                <% end %>
-            </div>
+<div class="container">
+    <div class="row justify-content-center pt-3">
+        <div class="col-6">
+            <%=t 'landing-content-html'%>
+        </div>
+        <div class="col-6">
+            <%= form_for Epitaph.new, url: write_new_epitaph_path, html: {class: 'themed-form'} do |f| %>
+                <div class="form-group row">
+                    <%= f.label :name, class: 'col-2 col-form-label col-form-label-lg'%>
+                    <%= f.text_field :name, value: session[:name], class: 'form-control form-control-lg col-8', placeholder: Epitaph.human_attribute_name(:name) %>
+                </div>
+                <%= button_tag t('write_yours_submit'), class: 'btn btn-large' %>
+            <% end %>
         </div>
     </div>
 </div>
