@@ -11,7 +11,19 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap-sprockets
 //= require jquery_ujs
+
+// These have been disabled until it's proven that they are needed
+// require bootstrap/util
+// require bootstrap/alert
+// require bootstrap/button
+// require bootstrap/carousel
+// require bootstrap/collapse
+// require bootstrap/dropdown
+// require bootstrap/modal
+// require bootstrap/scrollspy
+// require bootstrap/tab
+// require bootstrap/popover
+
 //= require turbolinks
 //= require_tree .

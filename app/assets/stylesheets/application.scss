@@ -26,15 +26,13 @@ nav {
 }
 
 .landing-header {
-    text-align: center;
     h4 {
         margin-bottom: 3rem;
     }
 }
 
-.tombstone-1 {
+.tombstone {
     text-align: center;
-    background-image: url(image_path('Tombstone_1'));
     background-repeat: no-repeat;
     background-size: contain;
     background-position: top center;
@@ -47,8 +45,54 @@ nav {
         width: 18vw;
         margin: auto;
         margin-top: 9vh;
-        h3, h4, h5 {
+        h3 {
+            font-size: 3.3vw;
+        }
+        h4, h5 {
             font-size: 2.5vw;
         }
+    }
+}
+.tombstone-1 { background-image: url(image_path('Tombstone_1')); }
+.tombstone-2 { background-image: url(image_path('Tombstone_2')); }
+
+.fade-darker {
+    background-image: url(image_path('Dot_Gradient_Blue'));
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.darker {
+    background-color: $darkerblue;
+}
+
+form.themed-form {
+    .form-control {
+        background-color: transparent;
+        color: $white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    .form-control:focus {
+        border-color: $red;
+    }
+    label, .form-control {
+        border-bottom: .15rem solid $red;
+        border-radius: 0;
+    }
+    label {
+        color: $blue;
+        padding-left: 0;
+        margin-left: 15px;
+    }
+    .btn {
+        border-radius: 0;
+        color: $white;
+        background-color: $red;
+        font-family: $font-family-serif;
+        text-transform: uppercase;
+        padding: 1rem 3rem;
+        letter-spacing: 0.1rem;
     }
 }
