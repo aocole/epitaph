@@ -28,28 +28,35 @@
         <%= render partial: 'new_answer_right', locals: {answer_id: 'new-epitaph-a7', name: @epitaph.name} %>
         <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-q8'} %>
     </div>
-    <%= form_for @epitaph do |f| %>
+    <%= form_for @epitaph, html: {class: 'themed-form tombstone-bg'} do |f| %>
         <div class="fade-down-lighter fade-down-lighter-full lighter">
             <%= render partial: 'new_question', locals: {question_id: 'new-epitaph-end'} %>
             <div class="row justify-content-center">
                 <div class="tombstone tombstone-1 col-4-lg">
                     <div class="epitaph-container">
                         <h3><%= @epitaph.name %></h3>
-                        <%= f.label :text %>
-                        <%= f.text_field :text, value: @epitaph.text, placeholder: t(:epitaph_placeholder) %>
+                        <%= f.label :text, class: 'sr-only' %>
+                        <%= f.text_area :text, value: @epitaph.text, class: 'form-control', placeholder: t(:epitaph_placeholder) %>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-center">
-            <% if current_user %>
-                <%= submit_tag t(:save) %>
-            <% else %>
-                <%= t :save_yours_login_required %>
-                <%= submit_tag t(:twitter_submit) %>
-            <% end %>
-
+        <div class="new-epitaph-save container">
+            <div class="row justify-content-center">
+                <% if current_user %>
+                    <h6><%= t :save_yours %></h6>
+                <% else %>
+                    <h6><%= t :save_yours_login_required %></h6>
+                <% end %>
+            </div>
+            <div class="row justify-content-center">
+                <% if current_user %>
+                    <%= button_tag t(:save), class: 'btn' %>
+                <% else %>
+                    <%= button_tag t('twitter-submit-html'), class: 'btn', name: 'commit', value: 'twitter' %>
+                <% end %>
+            </div>
         </div>
     <% end %>
 </div>

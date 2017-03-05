@@ -29,10 +29,11 @@ class EpitaphsController < ApplicationController
     store_location_for :user, epitaphs_path
 
     case params[:commit]
-    when t(:twitter_submit) then redirect_to user_twitter_omniauth_authorize_path
+    when 'twitter' then redirect_to user_twitter_omniauth_authorize_path
     else
       # don't know how they got here. is error or someone messing with the form.
-      logger.error "Got a bad value for submit on #{create_epitaph_path}: #{params[:commit].inspect}"
+      # TODO: Raise a proper error here
+      logger.error "Got a bad value for submit on POST #{epitaphs_path}: #{params[:commit].inspect}"
       redirect_to :root
     end
   end

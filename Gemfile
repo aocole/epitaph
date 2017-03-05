@@ -38,6 +38,7 @@ gem 'high_voltage', '~> 3.0.0'
 
 # Appearances
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Use sqlite as the database for Active Record

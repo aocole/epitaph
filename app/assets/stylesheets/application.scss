@@ -1,6 +1,6 @@
 @import "bootstrap_custom";
-body {
-}
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -72,7 +72,7 @@ nav {
     background-position: 0 -270px;
     background-repeat: repeat-x;
     &.fade-down-lighter-full {
-    background-position: top;
+    background-position: 0 -1px; // -1px gets rid of a 1px gap in Chrome
     }
 }
 
@@ -90,13 +90,32 @@ nav {
     background-color: $darkestblue;
 }
 
+
 form.themed-form {
+    &.tombstone-bg {
+        textarea {
+            max-height: 10rem;
+        }
+        label {
+            border: none;
+        }
+        .form-control {
+            color: $darkblue;
+            text-align: center;
+            &::placeholder {
+                color: $darkblue;
+            }
+        }
+    }
     .form-control {
         background-color: transparent;
         color: $white;
         border-top: none;
         border-left: none;
         border-right: none;
+        &::placeholder {
+            color: $blue;
+        }
     }
     .form-control:focus {
         border-color: $red;
@@ -118,6 +137,11 @@ form.themed-form {
         text-transform: uppercase;
         padding: 1rem 3rem;
         letter-spacing: 0.1rem;
+        box-shadow: 4px 4px $darkred;
+        i {
+            vertical-align: middle;
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -136,8 +160,7 @@ form.themed-form {
         content: none;
     }
     color: $darkestblue;
-    padding: 3rem 2rem 6rem 2rem;
-    margin-bottom: 1rem;
+    padding: 3rem 2rem 8rem 2rem;
     background-repeat: no-repeat;
     background-size: 100%;
     &.new-epitaph-answer-left {
@@ -185,4 +208,9 @@ form.themed-form {
 .new-epitaph-end {
     padding-top: 2rem;
     margin-bottom: 5rem;
+}
+
+.new-epitaph-save {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
 }

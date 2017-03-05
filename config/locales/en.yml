@@ -2,10 +2,15 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  activerecord:
+    attributes:
+      epitaph:
+        text: Epitaph
   write_yours_from_share: Write your own epitaph
   write_yours_submit: Write your epitaph
-  twitter_submit: Login with Twitter
-  save_yours_login_required: "to save your epitaph, chose how you want to log in:"
+  twitter-submit-html: <i class="fa fa-twitter" aria-hidden="true"></i> Login with Twitter
+  save_yours_login_required: "Save your epitaph"
+  save_yours: "Save your epitaph"
   epitaph_placeholder: your epitaph...
   save: Save
   share: Share
