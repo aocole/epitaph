@@ -1,0 +1,31 @@
+<%= form_for @epitaph, url: epitaph_path(current_user), html: {class: 'themed-form tombstone-bg'} do |f| %>
+  <div class="lighter fade-darker-short">
+
+    <div class="container">
+      <div class="row landing-header justify-content-center">
+        <div class="col-12">
+          <h4 class='text-primary'><%= t :landing_header %> </h4>
+        </div>
+      </div>
+    </div>
+
+    <%= render 'epitaphs/tombstone' do %>
+        <h5>Here lies</h4>
+        <%= f.label :name %>
+        <h3><%= f.text_field :name, class: 'form-control', placeholder: Epitaph.human_attribute_name(:name) %></h3>
+        <%= f.label :text %>
+        <%= f.text_area :text, value: @epitaph.text, class: 'form-control', placeholder: t(:epitaph_placeholder) %>
+    <% end %>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center show-epitaph-buttons">
+      <div class="col-md-auto col-sm-6">
+        <%= link_to t('cancel'), epitaph_url(current_user), class: 'btn', role: "button" %>
+      </div>
+      <div class="col-md-auto col-sm-6">
+        <%= button_tag t(:save), class: 'btn' %>
+      </div>
+    </div>
+  </div>
+<% end %>

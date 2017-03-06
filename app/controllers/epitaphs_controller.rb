@@ -38,10 +38,31 @@ class EpitaphsController < ApplicationController
     end
   end
 
-  def share
+  def show
     u = User.where(slug: params[:id].to_s).first!
     @epitaph = u && u.epitaph
     raise ActiveRecord::RecordNotFound unless @epitaph
+  end
+
+  def share
+      show
+  end
+
+  def edit
+      authenticate_user!
+      @epitaph = current_user.epitaph
+      if @epitaph.nil?
+          redirect_to :root
+          return
+      end
+  end
+
+  def update
+      authenticate_user!
+      @epitaph = current_user.epitaph
+      raise ActiveRecord::RecordNotFound unless @epitaph
+      @epitaph.update!(epitaph_params)
+      redirect_to epitaph_url(current_user)
   end
 
   # user will end up here after clicking "save" and going through login redirect dance
@@ -59,10 +80,10 @@ class EpitaphsController < ApplicationController
       @epitaph.name = e[:name]
       @epitaph.text = e[:text]
       @epitaph.save!
+      logger.debug "Final epitaph: #{@epitaph.inspect}"
     end
-    logger.debug "Final epitaph: #{@epitaph.inspect}"
 
-    redirect_to share_epitaph_path(current_user)
+    redirect_to epitaph_path(current_user)
   end
 
 

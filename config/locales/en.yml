@@ -13,8 +13,13 @@ en:
   save_yours: "Save your epitaph"
   epitaph_placeholder: your epitaph...
   save: Save
+  share_link: Share Link
   share: Share
+  share_yours: Share your epitaph
+  edit_epitaph: Edit epitaph
   landing_header: What will be written on your grave?
+  edit_header: Nothing is set in stone... yet.
+  share_header: Share your epitaph so your loved ones know what to put on your grave
   landing-content-html:
     <span class="h3">What is an epitaph?</span>
     <p>An epitaph refers to text that is inscribed on a tombstone. Many of the

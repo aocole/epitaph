@@ -6,18 +6,8 @@
             </div>
         </div>
     </div>
-    <div class="fade-darker">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="tombstone tombstone-1">
-                    <div class="epitaph-container">
-                        <h5>Here lies</h4>
-                        <h3>Will Rogers</h3>
-                        <h4>I never met a man I didn’t like</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="fade-darker landing-tombstone-container">
+        <%= render partial: 'epitaphs/tombstone_name_text', locals: {name: 'Will Roger', text: "I never met a man I didn’t like"} %>
     </div>
 </div>
 <div class="container">
@@ -25,7 +15,7 @@
         <div class="col-lg-6">
             <%=t 'landing-content-html'%>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 landing-form">
             <%= form_for Epitaph.new, url: write_new_epitaph_path, html: {class: 'themed-form'} do |f| %>
                 <div class="form-group row">
                     <%= f.label :name, class: 'col-2 col-form-label col-form-label-lg'%>

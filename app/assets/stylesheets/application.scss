@@ -28,6 +28,16 @@ nav {
     }
 }
 
+.landing-tombstone-container {
+    @media (min-width: map-get($grid-breakpoints, md)) {
+        margin-bottom: 3rem;
+    }
+}
+
+.landing-form {
+    margin-bottom: 2rem;
+}
+
 .tombstone {
     text-align: center;
     background-repeat: no-repeat;
@@ -35,11 +45,10 @@ nav {
     background-position: top center;
     color: $darkestblue;
     @media (min-width: map-get($grid-breakpoints, md)) {
-        height: 25rem;
+        height: 24rem;
         width: 33rem;
-        margin-bottom: 3rem;
     }
-    height: 18rem;
+    height: 17rem;
     min-width: 23rem;
     margin: 0;
     .epitaph-container {
@@ -67,6 +76,12 @@ nav {
     background-position: bottom;
     background-repeat: repeat-x;
     min-height: 320px;
+}
+
+.fade-darker-short {
+    background-image: image-url('Dot_Gradient_Blue');
+    background-position: 0 calc(100% + 150px);
+    background-repeat: repeat-x;
 }
 
 .fade-darkest {
@@ -105,13 +120,15 @@ form.themed-form {
             max-height: 10rem;
             width: 100%;
             margin: auto;
-            font-family: $font-family-serif;
         }
         label {
             border: none;
+            margin-left: 0;
+            font-size: .8rem;
         }
         .form-control {
             color: $darkestblue;
+            font-family: $font-family-serif;
             text-align: center;
             &::placeholder {
                 color: $darkblue;
@@ -140,19 +157,20 @@ form.themed-form {
         padding-left: 0;
         margin-left: 15px;
     }
-    .btn {
-        border-radius: 0;
-        color: $white;
-        background-color: $red;
-        font-family: $font-family-serif;
-        text-transform: uppercase;
-        padding: 1rem 3rem;
-        letter-spacing: 0.1rem;
-        box-shadow: 4px 4px $darkred;
-        i {
-            vertical-align: middle;
-            font-size: 1.5rem;
-        }
+}
+
+.btn {
+    border-radius: 0;
+    color: $white;
+    background-color: $red;
+    font-family: $font-family-serif;
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    letter-spacing: 0.1rem;
+    box-shadow: 4px 4px $darkred;
+    i {
+        vertical-align: middle;
+        font-size: 1.5rem;
     }
 }
 
@@ -227,4 +245,12 @@ form.themed-form {
 .new-epitaph-save {
     padding-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.show-epitaph-buttons {
+    padding-top: 2rem;
+    > div {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
 }
