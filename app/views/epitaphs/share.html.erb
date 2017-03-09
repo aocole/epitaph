@@ -1,13 +1,23 @@
-<div><%= @epitaph.name %></div>
+<div class="lighter fade-darker-short">
 
-<div><%= @epitaph.text %></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <%= render partial: 'tombstone_name_text', locals: {name: @epitaph.name, text: @epitaph.text} %>
+            </div>
+            <div class="col-lg-8">
+              <h4><%=t 'share_header' %></h4>
+              <% if @epitaph.user == current_user %>
+                <div><%=label_tag :share_link, t(:share_link) %><%= text_field_tag :share_link, epitaph_url(@epitaph.user), class: 'form-control' %></div>
+              <% else %>
+                <div><%= link_to t(:write_yours_from_share), root_path %>
+              <% end %>
+            </div>
+        </div>
+    </div>
 
+</div>
 
-<% if @epitaph.user == current_user %>
-  <div><%=label_tag :share, t(:share) %><%= text_field_tag :share, share_epitaph_url(current_user) %></div>
-<% else %>
-  <div><%= link_to t(:write_yours_from_share), root_path %>
-<% end %>
 
 <div id="threedeeplayland">
     <div oncontextmenu="return false;" id="viewerContext" style="width: 400px; height: 400px"></div>
