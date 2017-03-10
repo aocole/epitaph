@@ -106,7 +106,7 @@ OpenJsCad.Viewer = function(containerelement,options) {
   if ("solid"  in options) { this.setSolidOptions(options["solid"]); }
 
   // Set up WebGL state
-  var gl = GL.create();
+  var gl = GL.create({alpha: true});
   this.gl = gl;
   this.gl.lineWidth(1); // don't let the library choose
 
@@ -120,7 +120,7 @@ OpenJsCad.Viewer = function(containerelement,options) {
   this.gl.matrixMode(this.gl.MODELVIEW);
 
   this.gl.blendFunc(this.gl.SRC_ALPHA, this.gl.ONE_MINUS_SRC_ALPHA);
-  this.gl.clearColor(0.93, 0.93, 0.93, 1);
+  this.gl.clearColor(0, 0, 0, 0);
   this.gl.enable(this.gl.DEPTH_TEST);
   this.gl.enable(this.gl.CULL_FACE);
 

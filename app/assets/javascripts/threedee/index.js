@@ -1,4 +1,3 @@
-//= require jquery
 //= require ./jquery/jquery.hammer
 //= require ./lightgl
 //= require ./csg

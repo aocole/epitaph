@@ -24,5 +24,3 @@
 // require bootstrap/scrollspy
 // require bootstrap/tab
 // require bootstrap/popover
-
-//= require turbolinks
