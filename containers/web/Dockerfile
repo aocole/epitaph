@@ -1,7 +1,7 @@
 FROM ruby:2.4.0
 
-RUN http_proxy=$HTTP_PROXY apt-get update -qq \
-    && http_proxy=$HTTP_PROXY apt-get install -y --no-install-recommends \
+RUN apt-get update -qq \
+    && apt-get install -y --no-install-recommends \
         build-essential \
         libpq-dev \
     && apt-get clean \
