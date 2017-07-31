@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
-  root to: "high_voltage/pages#show", id: 'teaser'
+  root to: "high_voltage/pages#show", id: 'landing'
 end
